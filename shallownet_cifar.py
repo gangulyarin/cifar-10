@@ -6,14 +6,12 @@ import tensorflow as tf
 from sklearn.preprocessing import OneHotEncoder,LabelEncoder
 from sklearn.metrics import classification_report
 from conv.shallownet import ShallowNet
-import os
 
 ap = argparse.ArgumentParser()
 ap.add_argument('-d','--dataset',required=True,help="Path to input dataset")
-ap.add_argument('-s','--size',required=False,help="Resize Dimension",default=32)
+ap.add_argument('-s','--size',required=False,heimport oslp="Resize Dimension",default=32)
 ap.add_argument('-e','--epochs',required=False,help="Number of Epochs",default=1)
 args = vars(ap.parse_args())
-
 
 train_path = args['dataset']+"/train"
 test_path = args['dataset']+"/test"
@@ -21,14 +19,7 @@ test_path = args['dataset']+"/test"
 imagePaths_train = list(paths.list_images(train_path))
 imagePaths_test = list(paths.list_images(test_path))
 
-#loader = FileDatasetLoader()
-#df = loader.load(imagePaths)
-
 ohe= OneHotEncoder()
-le = LabelEncoder()
-#df['Label'] = le.fit_transform(df['Label'])
-
-#train,test = train_test_split(df)
 
 size = int(args['size'])
 epochs = int(args['epochs'])
