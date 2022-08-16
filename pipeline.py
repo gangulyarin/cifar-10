@@ -1,8 +1,12 @@
 import airflow
 from airflow.models import DAG 
 from airflow.operators.python_operator import PythonOperator 
-from inital_model_functions import load_preprocess,fit_model
 
+
+import sys
+sys.path.insert(0,'/home/arindam/ai-ml/ImageClassification')
+
+from inital_model_functions import load_preprocess,fit_model
 
 args = {
     'owner': 'airflow',
