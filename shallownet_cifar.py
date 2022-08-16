@@ -9,7 +9,7 @@ from conv.shallownet import ShallowNet
 
 ap = argparse.ArgumentParser()
 ap.add_argument('-d','--dataset',required=True,help="Path to input dataset")
-ap.add_argument('-s','--size',required=False,heimport oslp="Resize Dimension",default=32)
+ap.add_argument('-s','--size',required=False,help="Resize Dimension",default=32)
 ap.add_argument('-e','--epochs',required=False,help="Number of Epochs",default=1)
 args = vars(ap.parse_args())
 
